@@ -1,0 +1,248 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Class Tutorial (Analysis of Speech Signal Spectrums Using the L2 Norm)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m33069</md:content-id>
+  <md:title>Class Tutorial (Analysis of Speech Signal Spectrums Using the L2 Norm)</md:title>
+  <md:abstract>This method describes the course tutorial supplied by the professor.</md:abstract>
+  <md:uuid>3e5763f1-b60e-431e-8282-33a5e8909213</md:uuid>
+</metadata>
+<content>
+    <section id="id41175647">
+      <title>VI – Class Tutorial</title>
+      <para id="id34877418">This section is based on the class tutorial stated here: <link url="http://moodle.csun.edu/file.php/177/VoiceRecognition/node5.html">http://moodle.csun.edu/file.php/177/VoiceRecognition/node5.html</link>.</para>
+      <para id="id35341705">For this tutorial, we analyze the sequence shown in figure 6.1; this figure shows two recordings of Nicholas saying the word “two”. We denote these sequences as two1 and two2.</para>
+      <figure id="id35275090">
+        <media id="id35275090_media" alt="">
+          <image mime-type="image/png" src="../../media/graphics1-768d.png" id="id35275090__onlineimage" height="219" width="599"/>
+        </media>
+      </figure>
+      <para id="id35157195">
+        <emphasis effect="bold">Figure 6.1: Two recordings of Nicholas saying the word “two”.</emphasis>
+      </para>
+      <para id="id35441193">We first compute the L2 norm of the difference of two signals as shown in (6.1).</para>
+      <table id="id35412856" summary="">
+        <tgroup cols="2">
+          <colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="c2"/>
+          <tbody>
+            <row>
+              <entry>
+                <m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+                  <m:semantics>
+                    <m:mrow>
+                      <m:mstyle fontsize="12pt">
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mrow>
+                              <m:mo stretchy="false">∥</m:mo>
+                              <m:mrow>
+                                <m:msub>
+                                  <m:mi>f</m:mi>
+                                  <m:mstyle fontsize="8pt">
+                                    <m:mrow>
+                                      <m:mn>1</m:mn>
+                                    </m:mrow>
+                                  </m:mstyle>
+                                </m:msub>
+                                <m:mo stretchy="false">−</m:mo>
+                                <m:msub>
+                                  <m:mi>f</m:mi>
+                                  <m:mstyle fontsize="8pt">
+                                    <m:mrow>
+                                      <m:mn>2</m:mn>
+                                    </m:mrow>
+                                  </m:mstyle>
+                                </m:msub>
+                              </m:mrow>
+                              <m:mo stretchy="false">∥</m:mo>
+                            </m:mrow>
+                            <m:mo stretchy="false">=</m:mo>
+                            <m:mrow>
+                              <m:munderover>
+                                <m:mo stretchy="false">∑</m:mo>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>i</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mrow>
+                                      <m:mtext>min</m:mtext>
+                                      <m:mo stretchy="false">(</m:mo>
+                                      <m:msub>
+                                        <m:mi>N</m:mi>
+                                        <m:mstyle fontsize="6pt">
+                                          <m:mrow>
+                                            <m:mn>1</m:mn>
+                                          </m:mrow>
+                                        </m:mstyle>
+                                      </m:msub>
+                                      <m:mi>,</m:mi>
+                                      <m:msub>
+                                        <m:mi>N</m:mi>
+                                        <m:mstyle fontsize="6pt">
+                                          <m:mrow>
+                                            <m:mn>2</m:mn>
+                                          </m:mrow>
+                                        </m:mstyle>
+                                      </m:msub>
+                                      <m:mo stretchy="false">)</m:mo>
+                                    </m:mrow>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:munderover>
+                              <m:msup>
+                                <m:mfenced open="(" close=")">
+                                  <m:mrow>
+                                    <m:msub>
+                                      <m:mi>f</m:mi>
+                                      <m:mstyle fontsize="8pt">
+                                        <m:mrow>
+                                          <m:mn>1</m:mn>
+                                        </m:mrow>
+                                      </m:mstyle>
+                                    </m:msub>
+                                    <m:mo stretchy="false">(</m:mo>
+                                    <m:mi>i</m:mi>
+                                    <m:mrow>
+                                      <m:mo stretchy="false">)</m:mo>
+                                      <m:mo stretchy="false">−</m:mo>
+                                      <m:msub>
+                                        <m:mi>f</m:mi>
+                                        <m:mstyle fontsize="8pt">
+                                          <m:mrow>
+                                            <m:mn>2</m:mn>
+                                          </m:mrow>
+                                        </m:mstyle>
+                                      </m:msub>
+                                    </m:mrow>
+                                    <m:mo stretchy="false">(</m:mo>
+                                    <m:mi>i</m:mi>
+                                    <m:mo stretchy="false">)</m:mo>
+                                  </m:mrow>
+                                </m:mfenced>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mn>2</m:mn>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msup>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mstyle>
+                      <m:mrow/>
+                    </m:mrow>
+                    <m:annotation encoding="StarMath 5.0"> size 12{ ldline f rSub { size 8{1} }  - f rSub { size 8{2} }  rdline = Sum cSub { size 8{i} }  cSup { size 8{"min" \( N rSub { size 6{1} } ,N rSub { size 6{2} }  \) } }  { left (f rSub { size 8{1} }  \( i \)  - f rSub { size 8{2} }  \( i \)  right ) rSup { size 8{2} } } } {}</m:annotation>
+                  </m:semantics>
+                </m:math>
+              </entry>
+              <entry>(6.1)</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para id="id35156222">We naively cut off the comparison of the two data sequences when the shorter signal ends. The norm of the difference between these two sequences is approximately 15.4. To gain an understanding of whether this value is large, we compute the energy in the individual signals. The energy in two1 and two2 are approximately 12.0 and 9.3, respectively. We see that the norm of the difference is greater than 100% of the energy in each individual signal. This is very large for two signals that produce the same sound (where “same” here means that both signals are interpreted by a human as having the same meaning).</para>
+      <para id="id34926270">We now compare the norm of the first “two” sequence to itself. Shown in figure 6.2 are two sequences: two1 and two3, where two3 = 5 * two1. Note the difference in the values of the y axes. As one can see, the difference in the signals is large (as was expected).</para>
+      <para id="id36315478">
+        <figure id="id39672795">
+          <media id="id39672795_media" alt="">
+            <image mime-type="image/png" src="../../media/graphics2.png" id="id39672795__onlineimage" height="234" width="599"/>
+          </media>
+        </figure>
+      </para>
+      <para id="id35324799">
+        <emphasis effect="bold">Figure 6.2: Plots showing a sequence “two” stated by Nicholas, that signal multiplied by 5, and the difference of the two.</emphasis>
+      </para>
+      <para id="id35151884">Were two1 and two3 different recordings of the same person saying the phrase “two”, we could first make the sequences comparable by normalizing the amount the two sequences. As suggested in the tutorial, we could normalize by the maximum value in the signal. This is done according to the formula shown in (6.2).</para>
+      <table id="id35392935" summary="">
+        <tgroup cols="2">
+          <colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="c2"/>
+          <tbody>
+            <row>
+              <entry>
+                <m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+                  <m:semantics>
+                    <m:mrow>
+                      <m:mstyle fontsize="12pt">
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mtext>normalized data</m:mtext>
+                            <m:mo stretchy="false">=</m:mo>
+                            <m:mfrac>
+                              <m:mtext>data</m:mtext>
+                              <m:mrow>
+                                <m:mtext>max</m:mtext>
+                                <m:mo stretchy="false">(</m:mo>
+                                <m:mtext>data</m:mtext>
+                                <m:mo stretchy="false">)</m:mo>
+                              </m:mrow>
+                            </m:mfrac>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mstyle>
+                      <m:mrow/>
+                    </m:mrow>
+                    <m:annotation encoding="StarMath 5.0"> size 12{"normalized data"= {  {"data"}  over  {"max" \( "data" \) } } } {}</m:annotation>
+                  </m:semantics>
+                </m:math>
+              </entry>
+              <entry>(6.2)</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para id="id35161160">In this case this procedure works perfectly, and in fact the L2 norm of the difference vector between two1 and the normalized two3 is 0. However, this procedure only works because one signal is exactly a multiple of the other. If the signals were slightly misaligned, or if there were noise added to the signal, then the energy in the difference signal would again be on the order of the energy in the signal itself. There would not have to be a lot of noise to corrupt this procedure. If two3 equaled 5*two1 at all points except the maximum, and that point were corrupted such that it were 2*5*two1, then the average value for the ratio between the two1 and the normalized data would be approximately 2.</para>
+      <para id="id39673687">A more robust normalization procedure is to normalize by the energy in the signal. This is done according to the formula shown in (6.3); the 2 subscript denotes that the 2 norm is used.</para>
+      <table id="id34964398" summary="">
+        <tgroup cols="2">
+          <colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="c2"/>
+          <tbody>
+            <row>
+              <entry>
+                <m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+                  <m:semantics>
+                    <m:mrow>
+                      <m:mstyle fontsize="12pt">
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mtext>normalized data </m:mtext>
+                            <m:mo stretchy="false">=</m:mo>
+                            <m:mfrac>
+                              <m:mtext>data</m:mtext>
+                              <m:msub>
+                                <m:mrow>
+                                  <m:mo stretchy="false">∥</m:mo>
+                                  <m:mtext>data</m:mtext>
+                                  <m:mo stretchy="false">∥</m:mo>
+                                </m:mrow>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mn>2</m:mn>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msub>
+                            </m:mfrac>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mstyle>
+                      <m:mrow/>
+                    </m:mrow>
+                    <m:annotation encoding="StarMath 5.0"> size 12{"normalized data "=  {  {"data"}  over  { ldline "data" rdline  rSub { size 8{2} } } } } {}</m:annotation>
+                  </m:semantics>
+                </m:math>
+              </entry>
+              <entry>(6.3)</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para id="id35330683">Though this procedure does not make the comparison robust to alignment issues, it does make the procedure slightly robust to spurious noise, as long as that noise has a 0 temporal mean. Again, in our example where no noise is added to the system and the signals are perfectly aligned, the L2 norm of the difference between two1 and the normalized two3 is 0.</para>
+      <para id="id34926299">Comparing the norms as performed above is interesting; this procedure reveals just how adaptable the human brain is. The same phrase emitted by the same person while changing the amount of contraction in the diaphragm, the amount of contraction of the intercostals muscles, the spectrum emitted by the vocal cords (changing the pitch), and the shape of the respiratory tract (e.g. the shape of the mouth) are easily interpreted by the human brain to have the same meaning.</para>
+      <para id="id35336038">For a computer to perform similarly, we will need a more sophisticated processing than a comparison of norms.</para>
+    </section>
+  </content>
+</document>

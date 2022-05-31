@@ -1,0 +1,315 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Spectral Comparison (Analysis of Speech Signal Spectrums Using the L2 Norm)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m33070</md:content-id>
+  <md:title>Spectral Comparison (Analysis of Speech Signal Spectrums Using the L2 Norm)</md:title>
+  <md:abstract>Initial publication of module.</md:abstract>
+  <md:uuid>7180e54d-43be-47d7-a39c-4336b52f1669</md:uuid>
+</metadata>
+<content>
+    <section id="id1163644709036">
+      <title>VII – Spectral Comparison Using the L2 Norm</title>
+      <para id="id1163639847010">A common way to determine similarity is to compute the normalized correlation between two signals (as shown in (7.1)); here, d represents the data segment, σ<sup>2</sup> represents the variance of the signal, and γ is the normalized correlation value<footnote id="id1163641155920">Lewis, J.P., Fast Normalized Cross Correlation, <emphasis effect="italics">Vision Interface</emphasis>, 1995, pp. 120-123</footnote>. The multiplication of the demeaned data segments is an element by element multiplication. A common correlation threshold used for similarity in signal processing applications is 95%. It is interesting to note that the normalized correlation value for two1 and two2 is approximately 32%; this value is remarkably low.</para>
+      <table id="id1163646641638" summary="">
+        <tgroup cols="2">
+          <colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="c2"/>
+          <tbody>
+            <row>
+              <entry>
+                <m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+                  <m:semantics>
+                    <m:mrow>
+                      <m:mstyle fontsize="12pt">
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mi>γ</m:mi>
+                            <m:mo stretchy="false">=</m:mo>
+                            <m:mfrac>
+                              <m:mrow>
+                                <m:mfenced open="(" close=")">
+                                  <m:mrow>
+                                    <m:msub>
+                                      <m:mi>d</m:mi>
+                                      <m:mstyle fontsize="8pt">
+                                        <m:mrow>
+                                          <m:mn>1</m:mn>
+                                        </m:mrow>
+                                      </m:mstyle>
+                                    </m:msub>
+                                    <m:mo stretchy="false">−</m:mo>
+                                    <m:msub>
+                                      <m:mover accent="true">
+                                        <m:mi>d</m:mi>
+                                        <m:mo stretchy="false">ˉ</m:mo>
+                                      </m:mover>
+                                      <m:mstyle fontsize="8pt">
+                                        <m:mrow>
+                                          <m:mn>1</m:mn>
+                                        </m:mrow>
+                                      </m:mstyle>
+                                    </m:msub>
+                                  </m:mrow>
+                                </m:mfenced>
+                                <m:mfenced open="(" close=")">
+                                  <m:mrow>
+                                    <m:mrow>
+                                      <m:msub>
+                                        <m:mi>d</m:mi>
+                                        <m:mstyle fontsize="8pt">
+                                          <m:mrow>
+                                            <m:mn>2</m:mn>
+                                          </m:mrow>
+                                        </m:mstyle>
+                                      </m:msub>
+                                      <m:mo stretchy="false">−</m:mo>
+                                      <m:mover accent="true">
+                                        <m:mi>d</m:mi>
+                                        <m:mo stretchy="false">ˉ</m:mo>
+                                      </m:mover>
+                                    </m:mrow>
+                                    <m:mmultiscripts>
+                                      <m:mtext/>
+                                      <m:mprescripts/>
+                                      <m:mstyle fontsize="8pt">
+                                        <m:mrow>
+                                          <m:mn>2</m:mn>
+                                        </m:mrow>
+                                      </m:mstyle>
+                                      <m:none/>
+                                    </m:mmultiscripts>
+                                  </m:mrow>
+                                </m:mfenced>
+                              </m:mrow>
+                              <m:msqrt>
+                                <m:mrow>
+                                  <m:msubsup>
+                                    <m:mi>σ</m:mi>
+                                    <m:mstyle fontsize="8pt">
+                                      <m:mrow>
+                                        <m:mn>1</m:mn>
+                                      </m:mrow>
+                                    </m:mstyle>
+                                    <m:mstyle fontsize="8pt">
+                                      <m:mrow>
+                                        <m:mn>2</m:mn>
+                                      </m:mrow>
+                                    </m:mstyle>
+                                  </m:msubsup>
+                                  <m:mo stretchy="false">⋅</m:mo>
+                                  <m:msubsup>
+                                    <m:mi>σ</m:mi>
+                                    <m:mstyle fontsize="8pt">
+                                      <m:mrow>
+                                        <m:mn>2</m:mn>
+                                      </m:mrow>
+                                    </m:mstyle>
+                                    <m:mstyle fontsize="8pt">
+                                      <m:mrow>
+                                        <m:mn>2</m:mn>
+                                      </m:mrow>
+                                    </m:mstyle>
+                                  </m:msubsup>
+                                </m:mrow>
+                              </m:msqrt>
+                            </m:mfrac>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mstyle>
+                      <m:mrow/>
+                    </m:mrow>
+                    <m:annotation encoding="StarMath 5.0"> size 12{γ= {  { left (d rSub { size 8{1} }  -  { bar  {d}} rSub { size 8{1} }  right ) left (d rSub { size 8{2} }  -  { bar  {d}}"" lSub { size 8{2} }  right )}  over  { sqrt {σ rSub { size 8{1} }  rSup { size 8{2} }  cdot σ rSub { size 8{2} }  rSup { size 8{2} } } } } } {}</m:annotation>
+                  </m:semantics>
+                </m:math>
+              </entry>
+              <entry>(7.1)</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para id="id1163645712202">We get of hint of the similarities by observing a spectrogram of the two signals, shown in figure 7.1. By eye, we see that the two signals show similar spectral content through the phrase. The “trick” will be getting the computer to recognize that these two sequences are the same, as our eye does.</para>
+      <figure id="id1163646958890">
+        <media id="id1163646958890_media" alt="">
+          <image mime-type="image/png" src="../../media/graphics1-35ed.png" id="id1163646958890__onlineimage" height="260" width="599"/>
+        </media>
+      </figure>
+      <para id="id1163638684486">
+        <emphasis effect="bold">Figure 7.1: Spectograms of Two1 and Two2.</emphasis>
+      </para>
+      <para id="id1163644141703">We begin by computing the norm of the difference of the spectrums. The procedure for doing so is shown in figure 7.2. We analyze this procedure step by step below.</para>
+      <figure id="id1163640831801">
+        <media id="id1163640831801_media" alt="">
+          <image mime-type="image/wmf" src="graphics2.wmf" id="id1163640831801__onlineimage" height="130" width="599"/>
+        </media>
+      </figure>
+      <para id="id1163636690475"/>
+      <para id="id1163647837764">
+        <emphasis effect="bold">Figure 7.2: Procedure for computing the norm of the difference of the two signal spectrums.</emphasis>
+      </para>
+      <para id="id1163642960174">N<sub>max</sub> is the maximum of the number of samples in the two data segments; i.e. 
+<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mrow><m:msub><m:mi>N</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mtext>max</m:mtext></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">=</m:mo><m:mtext>max</m:mtext></m:mrow><m:mo stretchy="false">(</m:mo><m:mtext>length1,length2</m:mtext><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{N rSub { size 8{"max"} } ="max" \( "length1,length2" \) } {}</m:annotation></m:semantics></m:math>. We zero pad the shorter signal such that it is the same length as the longer segment. We then calculate the FFT of the two zero-padded signals. Note that by computing the FFT of a zero-padded signal, we are effectively performing sinc interpolation in the frequency domain for the shorter sequence. The magnitudes of the spectrums for two1 and two2 are shown in figure 7.3.</para>
+      <figure id="id1163637381105">
+        <media id="id1163637381105_media" alt="">
+          <image mime-type="image/png" src="../../media/graphics3.png" id="id1163637381105__onlineimage" height="173" width="600"/>
+        </media>
+      </figure>
+      <para id="id6863692">
+        <emphasis effect="bold">Figure 7.3: Magnitude of the spectrums of two1 and two2 signals.</emphasis>
+      </para>
+      <para id="id1163641185882">In figure 7.4, we zoom into the chart for improved resolution. We also show the spectrum of Nicholas saying the word “one” for comparison (this signal will be called one1 in this document). By eye, we are able to see that the spectrums of two1 and two2 are more similar to each other than the spectrum of one1 is.</para>
+      <figure id="id1163639776774">
+        <media id="id1163639776774_media" alt="">
+          <image mime-type="image/png" src="../../media/graphics4.png" id="id1163639776774__onlineimage" height="267" width="600"/>
+        </media>
+      </figure>
+      <para id="id1163642953078">
+        <emphasis effect="bold">Figure 7.4: Magnitude of the low frequency portion of spectrums of signals.</emphasis>
+      </para>
+      <para id="id1163646494926">After identifying the relevant spectrums, we normalize them by the amount of energy in the spectrum. That is, we convert them according to the formula shown in (6.3), this time the data in question is the signal’s spectrum. According to Parseval’s theorem, this is equivalent to performing normalization in the time domain (of the zero padded signals). Figure 7.5 shows the normalized spectrums.</para>
+      <para id="id1163632394179"/>
+      <figure id="id1163637058181">
+        <media id="id1163637058181_media" alt="">
+          <image mime-type="image/png" src="../../media/graphics5.png" id="id1163637058181__onlineimage" height="198" width="600"/>
+        </media>
+      </figure>
+      <para id="id1163636851181">Figure 7.5: Magnitude of normalized spectrums for two1 and two2 signals.</para>
+      <para id="id1163637747684">Finally, we compute the element by element difference of the two spectrums and calculate the norm of this difference. For the “two” normalized spectrums used in this example, the norm of the difference was approximately 143%. After normalization, the energy in each individual spectrum is 1. Again, the energy in the difference signal is very high for two signals that are the “same”.</para>
+      <para id="id1163645848783">We begin to understand why when we statistically analyze a set of recordings of the same phrase. Shown in figure 7.6 is a set of spectrums for recordings made by Nicholas stating the word “one”. By observing these plots, we gain some intuition into what a word is. Let us call each bump in the spectrum a “pocket” of energy. We see that the word “one” has five pockets of energy. We see that different recordings have pockets located at approximately the same frequency bins, but that the shape of each pocket is different. Because of this difference, there is variability in the average of frequency bins with high average energy values. This variability is quantified through the standard deviation, shown in the last row of plot 7.6.</para>
+      <figure id="id1163640452453">
+        <media id="id1163640452453_media" alt="">
+          <image mime-type="image/png" src="../../media/graphics6.png" id="id1163640452453__onlineimage" height="292" width="600"/>
+        </media>
+      </figure>
+      <para id="id1163636959713">
+        <emphasis effect="bold">Figure 7.6: A depiction of spectrum magnitudes of several recordings of Nicholas saying the word “one”, the average and standard deviation of those spectrums.</emphasis>
+      </para>
+      <para id="id1163644932277"/>
+      <para id="id1163646924813">We can use the L2 norm as a measure of the difference between the spectrum of two signals. We compute the L2 norm of Nicholas stating the word one (spectrum not shown) and the average “one” spectrum – the value is approximately 54%. When making the same comparison between the average spectrum and Nicholas stating the word “two”, the value becomes 75% - a percentage difference of approximately 36%. The deviation between the average “one” spectrum and Matt stating the word “one” is 62%.</para>
+      <para id="id1163644321441">We can take advantage of the knowledge of the variability of the signal in our comparison metric. To account for this variability, we can use a weighted L2 norm as our comparison metric. We define our weighted norm in (7.2).</para>
+      <table id="id1163647835788" summary="">
+        <tgroup cols="2">
+          <colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="c2"/>
+          <tbody>
+            <row>
+              <entry>
+                <m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+                  <m:semantics>
+                    <m:mrow>
+                      <m:mstyle fontsize="12pt">
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mi>c</m:mi>
+                            <m:mo stretchy="false">=</m:mo>
+                            <m:msqrt>
+                              <m:mrow>
+                                <m:munderover>
+                                  <m:mo stretchy="false">∑</m:mo>
+                                  <m:mstyle fontsize="8pt">
+                                    <m:mrow>
+                                      <m:mi>i</m:mi>
+                                    </m:mrow>
+                                  </m:mstyle>
+                                  <m:mstyle fontsize="8pt">
+                                    <m:mrow>
+                                      <m:mrow>
+                                        <m:mtext>min</m:mtext>
+                                        <m:mo stretchy="false">(</m:mo>
+                                        <m:msub>
+                                          <m:mi>N</m:mi>
+                                          <m:mstyle fontsize="6pt">
+                                            <m:mrow>
+                                              <m:mn>1</m:mn>
+                                            </m:mrow>
+                                          </m:mstyle>
+                                        </m:msub>
+                                        <m:mi>,</m:mi>
+                                        <m:msub>
+                                          <m:mi>N</m:mi>
+                                          <m:mstyle fontsize="6pt">
+                                            <m:mrow>
+                                              <m:mn>2</m:mn>
+                                            </m:mrow>
+                                          </m:mstyle>
+                                        </m:msub>
+                                        <m:mo stretchy="false">)</m:mo>
+                                      </m:mrow>
+                                    </m:mrow>
+                                  </m:mstyle>
+                                </m:munderover>
+                                <m:mfrac>
+                                  <m:msup>
+                                    <m:mfenced open="(" close=")">
+                                      <m:mrow>
+                                        <m:mi>f</m:mi>
+                                        <m:mo stretchy="false">(</m:mo>
+                                        <m:mi>i</m:mi>
+                                        <m:mrow>
+                                          <m:mo stretchy="false">)</m:mo>
+                                          <m:mo stretchy="false">−</m:mo>
+                                          <m:mover accent="true">
+                                            <m:mi>d</m:mi>
+                                            <m:mo stretchy="false">ˉ</m:mo>
+                                          </m:mover>
+                                        </m:mrow>
+                                        <m:mo stretchy="false">(</m:mo>
+                                        <m:mi>i</m:mi>
+                                        <m:mo stretchy="false">)</m:mo>
+                                      </m:mrow>
+                                    </m:mfenced>
+                                    <m:mstyle fontsize="8pt">
+                                      <m:mrow>
+                                        <m:mn>2</m:mn>
+                                      </m:mrow>
+                                    </m:mstyle>
+                                  </m:msup>
+                                  <m:mrow>
+                                    <m:mrow>
+                                      <m:mfenced open="(" close=")">
+                                        <m:mrow>
+                                          <m:mn>2</m:mn>
+                                          <m:mo stretchy="false">×</m:mo>
+                                          <m:msup>
+                                            <m:mtext>10</m:mtext>
+                                            <m:mstyle fontsize="8pt">
+                                              <m:mrow>
+                                                <m:mrow>
+                                                  <m:mo stretchy="false">−</m:mo>
+                                                  <m:mn>4</m:mn>
+                                                </m:mrow>
+                                              </m:mrow>
+                                            </m:mstyle>
+                                          </m:msup>
+                                        </m:mrow>
+                                      </m:mfenced>
+                                      <m:mo stretchy="false">+</m:mo>
+                                      <m:mi>σ</m:mi>
+                                    </m:mrow>
+                                    <m:mfenced open="(" close=")">
+                                      <m:mi>i</m:mi>
+                                    </m:mfenced>
+                                  </m:mrow>
+                                </m:mfrac>
+                              </m:mrow>
+                            </m:msqrt>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mstyle>
+                      <m:mrow/>
+                    </m:mrow>
+                    <m:annotation encoding="StarMath 5.0"> size 12{c= sqrt { Sum cSub { size 8{i} }  cSup { size 8{"min" \( N rSub { size 6{1} } ,N rSub { size 6{2} }  \) } }  { {  { left (f \( i \)  -  { bar  {d}} \( i \)  right ) rSup { size 8{2} } }  over  { left (2 times "10" rSup { size 8{ - 4} }  right )+σ left (i right )} } } } } {}</m:annotation>
+                  </m:semantics>
+                </m:math>
+              </entry>
+              <entry>(7.2)</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para id="id9039814">This metric reduces the importance of mean data values with high variance, and increases the penalty for data values with low variance. We include an addition to a constant in the denominator to prevent division by 0, and we set this constant equal to 
+<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mn>2</m:mn><m:mo stretchy="false">×</m:mo><m:msup><m:mtext>10</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mo stretchy="false">−</m:mo><m:mn>4</m:mn></m:mrow></m:mrow></m:mstyle></m:msup></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{2 times "10" rSup { size 8{ - 4} } } {}</m:annotation></m:semantics></m:math> since we notice that the noise in the normalized spectrum is around this level.</para>
+      <para id="id8987558">Using the weighted norm, we calculate a comparison metric between the average spectrum shown in figure 7.6, and a separate recording of Nicholas saying the word “one” to be 452. This seems like a high number, but it is no longer a physical quantity. We compare this value to the metric determined between the average spectrum shown in figure 7.6 and Nicholas saying the word “two”: 656. Notice that the difference in metric values is approximately 45%. The weighted norm value between the average spectrum shown in figure 7.6 and Matthew stating the word “one” is 691; a difference of approximately 53%.</para>
+      <para id="id1163645105489">Unfortunately, since the weighted norm value is not a physical quantity, we would require a large database of signals to determine the appropriate value for our threshold. In lieu of this, we will continue to use the L2 norm as our comparison metric.</para>
+    </section>
+  </content>
+</document>

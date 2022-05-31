@@ -1,0 +1,49 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>User Manual (Analysis of Speech Signal Spectrums Using the L2 Norm)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m33066</md:content-id>
+  <md:title>User Manual (Analysis of Speech Signal Spectrums Using the L2 Norm)</md:title>
+  <md:abstract>User Manual for Speech Analysis Project</md:abstract>
+  <md:uuid>30d1fb71-af5b-4b7a-8827-1ac7136f2a7f</md:uuid>
+</metadata>
+<content>
+    <section id="id8619317">
+      <title>III – User Manual</title>
+      <para id="id10567589">The software for this project was written in Matlab. The main codes is voiceRecognition.m. The prototype for the voiceRecognition functions is as follows:</para>
+      <para id="id6949752">trueMatch = voiceRecognition( username, pin, thresh,</para>
+      <para id="id9645338">candidateName )</para>
+      <para id="id9729706">It is assumed that each user has a username. In the files packaged with this report, the two users present in the database are ‘Nicholas’ and ‘Andrew’<footnote id="id8383185">Andrew is Nicholas’ roommate and was kind enough to allow himself to be recorded for the purposes of this project.</footnote>. The username parameter for the voiceRecognition is a 1D character array with characters equal to the username.</para>
+      <para id="id11758698">The pin parameter represents the user’s PIN. It is a four element 1D array containing integer values 0 – 9.</para>
+      <para id="id7271187">thresh is an optional parameter. There is a threshold associated with the final matching algorithm (discussed later). By default, this threshold is set to 0.48; but it can be changed by passing a double value between 0 and 1 into this parameter.</para>
+      <para id="id6206375">candidateName is an optional parameter. The candidate is the person whose recording will be compared to the username’s database. In practice, the candidate name and the username would always be the same. However, for testing purposes, it was convenient to be able to specify a different candidate – e.g. we would specify the username as ‘Nicholas’ and the candidate as ‘Andrew’ to verify that the software did indeed detect an impostor.</para>
+      <para id="id9325185">(3.1) shows an example of a voice recognition function call.</para>
+      <table id="id6828243" summary="">
+        <tgroup cols="2">
+          <colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="c2"/>
+          <tbody>
+            <row>
+              <entry>
+                <emphasis effect="bold">voiceRecognition( </emphasis>
+                <emphasis effect="bold">'Nicholas'</emphasis>
+                <emphasis effect="bold">, [0,1,2,3] );</emphasis>
+              </entry>
+              <entry>(3.1)</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <section id="id3047099">
+        <title>Directory Structure</title>
+        <para id="id6586416">The voiceRecognition software assumes a specific directory structure. There is a directory called ‘recordings’ in the same location as the Matlab working directory. Within the recordings directory are two directories: ‘current’ and ‘person’. The person directory contains the database of users who have previously entered their data into the system – i.e. it is the database of valid users. The current directory contains recordings of candidates.</para>
+        <para id="id3442099">Within the person directory, each user is granted his/her own directory. For example, there is a directory present named ‘Nicholas’. Within ‘Nicholas’ there should be seven wav file recordings of each pin number. For example, if the pin were 1-8-1-9, then there should be seven recordings of “one”, “eight”, and “nine”. The recordings must be labeled <emphasis effect="italics">num</emphasis>1.wav through <emphasis effect="italics">num</emphasis>7.wav.</para>
+        <para id="id9195225">Within the current directory, there again should be a directory for each candidate that would be presented to the software. In our case, we present no other candidates than those included in the user database. Within this directory, there must be recordings for all PIN numbers. In the above example, there should be present the files one.wav, eight.wav, and nine.wav.</para>
+      </section>
+      <section id="id8814862">
+        <title>Assumptions</title>
+        <para id="id5713904">There can be a significant amount of variability in the frequencies that a person uses to generate a word. The assumption made in this software is that the person generates the word attempting to use the same pitch and speed as previously conducted when submitting a phrase for comparison.</para>
+        <para id="id11441866">We now go on to describe the algorithms implemented in the software.</para>
+      </section>
+    </section>
+  </content>
+</document>

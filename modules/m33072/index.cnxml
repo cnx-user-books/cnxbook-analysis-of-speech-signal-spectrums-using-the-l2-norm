@@ -1,0 +1,15 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Summary (Analysis of Speech Signal Spectrums Using the L2 Norm)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m33072</md:content-id>
+  <md:title>Summary (Analysis of Speech Signal Spectrums Using the L2 Norm)</md:title>
+  <md:abstract>Summary</md:abstract>
+  <md:uuid>9174f044-3685-41f1-88bc-34ab6813afe0</md:uuid>
+</metadata>
+<content>
+    <section id="id22827678">
+      <title>IX – Summary</title>
+      <para id="id16281105">We have created an algorithm that makes comparisons between a stored Personal Identification Number (PIN) and a candidate PIN. The comparison is the L2 norm of the difference of the spectrum of the signals.</para>
+    </section>
+  </content>
+</document>

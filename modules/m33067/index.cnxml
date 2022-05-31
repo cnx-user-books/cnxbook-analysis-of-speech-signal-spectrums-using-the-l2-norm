@@ -1,0 +1,23 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Overall Approach (Analysis of Speech Signal Spectrums Using the L2 Norm)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m33067</md:content-id>
+  <md:title>Overall Approach (Analysis of Speech Signal Spectrums Using the L2 Norm)</md:title>
+  <md:abstract>This module describes the overall approach.</md:abstract>
+  <md:uuid>37505d0d-1258-499e-8246-4c62d8c14a3e</md:uuid>
+</metadata>
+<content>
+    <section id="id12709666">
+      <title>IV – Overall Approach</title>
+      <para id="id11660602">The overall approach is shown in figure 4.1. A PIN consists of a username and recordings of four separate (though not necessarily unqiue) numbers. A user is added to the database by adding seven recordings of all PIN numbers.</para>
+      <para id="id3628974">A candidate is a specified username and a single recoding of all PIN numbers. Upon submission to the software, the relevant signal is extracted from the entire candidate recording.</para>
+      <para id="id11601024">From the database, all seven recordings are combined into an “average” signal. The average signal and the extracted candidate signal are the compared – this results in a metric value. Based on this metric, a decision is made as to whether or not the candidate is a match or an impostor.</para>
+      <figure id="id11528027">
+        <media id="id11528027_media" alt="">
+          <image mime-type="image/png" src="../../media/graphics1-f192.png" id="id11528027__onlineimage" height="241" width="599"/>
+        </media>
+      </figure>
+      <para id="id10343297">Figure 4.1: Overall approach for speaker identification</para>
+    </section>
+  </content>
+</document>

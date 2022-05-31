@@ -1,0 +1,76 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Signal Extraction (Analysis of Speech Signal Spectrums Using the L2 Norm)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m33068</md:content-id>
+  <md:title>Signal Extraction (Analysis of Speech Signal Spectrums Using the L2 Norm)</md:title>
+  <md:abstract>This section describes how the signal is extracted.</md:abstract>
+  <md:uuid>53a34730-e579-4d16-976e-99fb037f8f26</md:uuid>
+</metadata>
+<content>
+    <section id="id30752526">
+      <title>V – Signal Extraction</title>
+      <para id="id19375760">Prior to signal comparison, the signals must first be aligned. The first step to alignment is to extract the relevant signal from the entire data segment. To perform this initial processing we smooth the absolute value of the data, and find the maximum of the smoothed data. Given the index of the maximum, we extend the bounds of our hypothesized signal outwards until the amount of energy within our bounds exceeds a threshold percentage. Energy is defined as the L2 norm of the data signal, shown in (5.1). This procedure is encapsulated in the function “extractSignal”.</para>
+      <table id="id21034896" summary="">
+        <tgroup cols="2">
+          <colspec colnum="1" colname="c1"/>
+          <colspec colnum="2" colname="c2"/>
+          <tbody>
+            <row>
+              <entry>
+                <m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+                  <m:semantics>
+                    <m:mrow>
+                      <m:mstyle fontsize="12pt">
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mi>E</m:mi>
+                            <m:mo stretchy="false">=</m:mo>
+                            <m:mrow>
+                              <m:munder>
+                                <m:mo stretchy="false">∑</m:mo>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>i</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:munder>
+                              <m:mrow>
+                                <m:mtext>data</m:mtext>
+                                <m:mo stretchy="false">(</m:mo>
+                                <m:mi>i</m:mi>
+                                <m:msup>
+                                  <m:mo stretchy="false">)</m:mo>
+                                  <m:mstyle fontsize="8pt">
+                                    <m:mrow>
+                                      <m:mn>2</m:mn>
+                                    </m:mrow>
+                                  </m:mstyle>
+                                </m:msup>
+                              </m:mrow>
+                            </m:mrow>
+                          </m:mrow>
+                        </m:mrow>
+                      </m:mstyle>
+                      <m:mrow/>
+                    </m:mrow>
+                    <m:annotation encoding="StarMath 5.0"> size 12{E= Sum cSub { size 8{i} }  {"data" \( i \)  rSup { size 8{2} } } } {}</m:annotation>
+                  </m:semantics>
+                </m:math>
+              </entry>
+              <entry>(5.1)</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <para id="id13065668">The threshold percentage was determined empirically. Figure 5.1 shows examples of the signal that was extracted for different threshold percentages. Portions of the data that were edited out are replaced with 0. As one can see, thresholding at 90% removes relevant information from the data, and thresholding at 99% retains much of the irrelevant values in the data. We set the energy threshold to 95%.</para>
+      <figure id="id20204275">
+        <media id="id20204275_media" alt="">
+          <image mime-type="image/png" src="../../media/graphics1-b176.png" id="id20204275__onlineimage" height="264" width="600"/>
+        </media>
+      </figure>
+      <para id="id19913503">
+        <emphasis effect="bold">Figure 5.1: Results of identifying the signal in the data segment based on different energy percentage thresholds. The original data shown is of Nicholas stating the word “one”. Portions that are removed from the signal are set to 0.</emphasis>
+      </para>
+    </section>
+  </content>
+</document>

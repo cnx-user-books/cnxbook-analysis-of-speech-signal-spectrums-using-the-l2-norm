@@ -1,0 +1,41 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Introduction (Analysis of Speech Signal Spectrums Using the L2 Norm)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m33064</md:content-id>
+  <md:title>Introduction (Analysis of Speech Signal Spectrums Using the L2 Norm)</md:title>
+  <md:abstract>Introduction to Speech Analysis Project</md:abstract>
+  <md:uuid>e0b6c673-e522-4478-aca3-161667b94f52</md:uuid>
+</metadata>
+<content>
+    <section id="id1168169678550">
+      <title>I – Introduction</title>
+      <para id="id1168171659798">Signals analysis is commonly applied to voice 
+signals. Voice signals are modulated using Amplitude Modulation (AM) for 
+broadcast distributions, and signals are compressed before transmission when 
+speaking into a phone. This report will introduce the use of the Fourier 
+Transform into speech signals analysis. Specifically, we will attempt to use the 
+Fourier Transform to identify the speaker of a series of words.</para>
+      <para id="id1168172409844">
+        <emphasis effect="bold">To focus our efforts, we present the following 
+problem:</emphasis>
+      </para>
+      <para id="id1168167398783">Biometric identification has begun to be used 
+to maintain security. Fingerprint identification door locks are now sold through 
+common stores like Staples<footnote id="id8241724"><link url="http://www.staples.com/iTouchless-Bio-Matic-Fingerprint-Door-Lock-Gold- Left-Handle/product_799740?cmArea=SEARCH">http://www.staples.com/iTouchless-Bio-
+Matic-Fingerprint-Door-Lock-Gold-Left-Handle/product_799740?
+cmArea=SEARCH</link></footnote>. A development team in Spain has created an IRIS 
+scanner that performs person verification to unlock cellular phones using the 
+phone’s built in camera<footnote id="id1168172812299"><link url="http://www.biowallet.net/index.php? option=com_content&amp;view=frontpage&amp;Itemid=1">http://www.biowallet.net/ind
+ex.php?option=com_content&amp;view=frontpage&amp;Itemid=1</link></footnote>. 
+Many biometric identification sensors are expensive, and therefore they have yet 
+to proliferate. A common microphone, though, is very cheap – even cheaper than a 
+camera. This paper investigates the possibility of using voice signals to 
+perform identification.</para>
+      <para id="id7093554">Specifically, we expect a user to say four numbers 
+from the set “zero” through “nine”. These four numbers are the user’s Personal 
+Identification Number (PIN). We will make a comparison of each stated number 
+with previous recordings of that user, and use those comparisons to make a 
+decision as to whether or not there is a match to the user.</para>
+    </section>
+  </content>
+</document>
