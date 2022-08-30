@@ -70,7 +70,7 @@
                                     </m:mrow>
                                     <m:mmultiscripts>
                                       <m:mtext/>
-                                      <m:mprescripts/>
+                                      <m:none/><m:none/><m:mprescripts/>
                                       <m:mstyle fontsize="8pt">
                                         <m:mrow>
                                           <m:mn>2</m:mn>
